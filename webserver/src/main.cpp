@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include <WebServer.h>
 
-const char *ssid = "Riz";
-const char *password = "0903989352";
+const char* ssid = "Acculamator";
+const char* password = "acculator";
 
 WebServer server(80);
 
@@ -18,7 +18,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
 
-  While(WiFi.status()!=WL_CONNECTED){
+  while(WiFi.status()!=WL_CONNECTED){
     delay(500);
     Serial.print(".");
   }
@@ -28,7 +28,7 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   server.on("/",handleRoot);
-  server.onNotFound("/",handleNotFound);
+  server.onNotFound(handleNotFound);
   server.begin();
   Serial.println("Server is running...");
 }

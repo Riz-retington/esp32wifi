@@ -2,8 +2,8 @@
 #include <WebServer.h>
 #define LED 2
 
-const char *ssid = "Riz";
-const char *password = "0903989352";
+const char* ssid = "Acculamator";
+const char* password = "acculator";
 const byte Led= 2;
 WebServer server(80);
 
